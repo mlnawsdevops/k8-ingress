@@ -35,4 +35,16 @@ spec:
     protocol: "TCP"
     port: 80
     targetPort: 80
-    
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app2
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:529088275803:certificate/a031711b-c9b9-47e6-a9c3-03a10be3bea3
+    alb.ingress.kubernetes.io/listen-ports: '{"HTTPS": 443}'
+    alb.ingress.kubernetes.io/tags: Environment=dev,Team=test 
+    alb.ingress.kubernetes.io/group.name: expense

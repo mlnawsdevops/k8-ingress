@@ -57,7 +57,7 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n ku
 # Ingress resource
 1. use annotations
 2. use ingress rules
-Ref: https://kubernetes.io/docs/concepts/services-networking/ingress/ --> ingress resource rules hostpath/contextpath
+Ref: https://kubernetes.io/docs/concepts/services-networking/ingress/
 
 # Annotations
 Annotations are used to select exernal resources. there is no limit like special characters, length.
