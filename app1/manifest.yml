@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app1
+  labels:
+    name: app1
+    tier: frontend
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      name: app1
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        name: app1
+        tier: frontend
+    spec:
+      containers:
+      - name: app1
+        image: mlndockerhub/app1:v1
+
+---
