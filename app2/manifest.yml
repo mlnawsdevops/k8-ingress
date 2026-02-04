@@ -48,3 +48,16 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '{"HTTPS": 443}'
     alb.ingress.kubernetes.io/tags: Environment=dev,Team=test 
     alb.ingress.kubernetes.io/group.name: expense
+spec:
+  ingressClassName: alb
+  rules:
+  - host: "app2.daws100s.online"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: app2
+            port:
+              number: 80
