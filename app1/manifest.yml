@@ -45,16 +45,17 @@ kind: Ingress
 metadata:
   name: app1
   annotations:
-    # kubernetes.io/ingress.class: alb --- depricated
+    # kubernetes.io/ingress.class: alb --> depricated
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
+    # acm https certificate attached to apploadbalancer
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:529088275803:certificate/a031711b-c9b9-47e6-a9c3-03a10be3bea3
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
     alb.ingress.kubernetes.io/tags: Environment=dev,Team=test
-    alb.ingress.kubernetes.io/group.name: expense
+    alb.ingress.kubernetes.io/group.name: expense  # unique loadbalancer  
 spec:
   ingressClassName: alb
-  rules:
+  rules: # listener rules
   - host: "app1.daws100s.online" # *.daws100s.online mentioned in acm and route53
     http:
       paths:
