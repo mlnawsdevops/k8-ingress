@@ -56,7 +56,7 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n ku
 
 # Ingress resource
 1. use annotations
-2. use ingress control
+2. use ingress rules
 Ref: https://kubernetes.io/docs/concepts/services-networking/ingress/ --> ingress resource rules hostpath/contextpath
 
 # Annotations
