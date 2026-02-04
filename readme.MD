@@ -63,4 +63,5 @@ Ref: https://kubernetes.io/docs/concepts/services-networking/ingress/
 Annotations are used to select exernal resources. there is no limit like special characters, length.
 Ref: https://kubernetes-sigs.github.io/aws-load-balancer-controller/latest/guide/ingress/annotations/#group.name
 
+app1 & app2
 ![alt text](k8-ingress.svg)
