@@ -1,4 +1,5 @@
-# Ingress Controller
+# Ingress Controller == aws loadbalancer controller
+Ref: https://kubernetes-sigs.github.io/aws-load-balancer-controller/latest/  --> examples, guide, deployment tabs
 
 ```
 1. eksctl utils associate-iam-oidc-provider \
@@ -52,3 +53,11 @@ eksctl create iamserviceaccount \
 
 helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system --set clusterName=expense --set serviceAccount.create=false --set serviceAccount.name=aws-load-balancer-controller
 ```
+
+# Ingress resource
+1. use annotations
+2. use ingress control
+Ref: https://kubernetes.io/docs/concepts/services-networking/ingress/ --> ingress resource rules hostpath/contextpath
+
+# Annotations
+Annotations are used to select exernal resources. there is no limit like special characters, length.
